@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumair Hassan | Full-Stack Developer & Cyber Security Specialist</title>
+<meta name="description" content="Sumair Hassan - MERN Stack Developer, Web Security Expert, Prompt Engineer and Tech Writer from Sargodha, Pakistan.">
+<link rel="shortcut icon" href="profile.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--bg:#060b18;--bg2:#0b1224;--card:#0f1930;--line:#1c2b4d;--tx:#e6ecf8;--mut:#8fa0c2;--a:#38bdf8;--b:#6366f1;--g:#34d399;--grad:linear-gradient(120deg,#38bdf8,#6366f1 60%,#a78bfa)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:'Sora',sans-serif;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--a);color:#000}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:var(--b);border-radius:8px}
+#loader{position:fixed;inset:0;background:var(--bg);z-index:9999;display:grid;place-items:center;transition:opacity .6s,visibility .6s}
+#loader.hide{opacity:0;visibility:hidden}
+.ld{font:600 1.4rem 'JetBrains Mono',monospace;color:var(--a)}
+.ld i{display:inline-block;width:10px;height:1.2em;background:var(--a);vertical-align:-4px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:2000}
+#bg{position:fixed;inset:0;z-index:-1}
+.glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.14),transparent 65%);pointer-events:none;transform:translate(-50%,-50%);z-index:-1;left:50%;top:30%}
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 8%;display:flex;justify-content:space-between;align-items:center;transition:.4s}
+header.sc{background:rgba(6,11,24,.8);backdrop-filter:blur(14px);padding:10px 8%;border-bottom:1px solid var(--line)}
+.logo{font-weight:800;font-size:1.2rem}.logo span{color:var(--a)}
+nav ul{display:flex;gap:6px;list-style:none}
+nav a{padding:6px 14px;border-radius:50px;font-size:.88rem;color:var(--mut);transition:.3s}
+nav a:hover,nav a.on{color:#fff;background:rgba(56,189,248,.12)}
+.ham{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer}
+section{padding:100px 8%;position:relative}
+.tag{font:400 .85rem 'JetBrains Mono',monospace;color:var(--a);margin-bottom:8px}
+h2.st{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:12px;letter-spacing:-.02em}
+.sub{color:var(--mut);max-width:680px;margin-bottom:46px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.l{transform:translateX(-50px)}.rv.r{transform:translateX(50px)}
+.rv.l.in,.rv.r.in{transform:none}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;border-radius:50px;font-weight:600;font-size:.92rem;border:1px solid transparent;cursor:pointer;transition:.35s;position:relative;overflow:hidden}
+.btn.p{background:var(--grad);color:#fff;box-shadow:0 10px 30px -8px rgba(99,102,241,.7)}
+.btn.p:hover{transform:translateY(-4px);box-shadow:0 16px 36px -8px rgba(56,189,248,.8)}
+.btn.o{border-color:var(--line);color:#fff;background:rgba(255,255,255,.03)}
+.btn.o:hover{border-color:var(--a);color:var(--a);transform:translateY(-4px)}
+/* hero */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:50px;padding-top:120px}
+.hi{font:400 .95rem 'JetBrains Mono',monospace;color:var(--g);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.hi:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--g);box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:18px}
+.role{font:600 1.2rem 'JetBrains Mono',monospace;min-height:2em;color:var(--a)}
+.role:after{content:"|";animation:blink 1s steps(1) infinite;margin-left:2px}
+.hero p.d{color:var(--mut);max-width:560px;margin:14px 0 30px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.soc{display:flex;gap:12px;margin-top:32px}
+.soc a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);color:var(--mut);transition:.35s}
+.soc a:hover{color:#fff;background:var(--b);border-color:var(--b);transform:translateY(-5px) rotate(8deg)}
+.vis{position:relative;display:grid;place-items:center;perspective:900px}
+.ring{position:absolute;width:360px;height:360px;border-radius:50%;background:conic-gradient(from 0deg,var(--a),var(--b),#a78bfa,var(--a));animation:spin 8s linear infinite;filter:blur(2px);opacity:.85}
+.ring:after{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--bg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo{position:relative;width:320px;height:320px;border-radius:50%;object-fit:cover;background:var(--card);animation:float 5s ease-in-out infinite;transition:transform .2s}
+@keyframes float{50%{margin-top:-18px}}
+.chip{position:absolute;background:rgba(15,25,48,.85);backdrop-filter:blur(10px);border:1px solid var(--line);padding:8px 14px;border-radius:14px;font:600 .78rem 'JetBrains Mono',monospace;display:flex;gap:8px;align-items:center;animation:float 5s ease-in-out infinite}
+.chip i{color:var(--a)}
+.c1{top:6%;left:0}.c2{top:20%;right:-2%;animation-delay:-1.5s}.c3{bottom:14%;left:-4%;animation-delay:-3s}.c4{bottom:4%;right:4%;animation-delay:-4s}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;padding:0 8%;margin-top:-30px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center;transition:.4s}
+.stat:hover{transform:translateY(-8px);border-color:var(--a)}
+.stat b{font-size:2.4rem;font-weight:800;display:block}
+.stat span{color:var(--mut);font-size:.88rem}
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.term{background:#050912;border:1px solid var(--line);border-radius:16px;overflow:hidden;font:400 .85rem/1.9 'JetBrains Mono',monospace;box-shadow:0 30px 60px -30px #000}
+.term .bar{background:var(--card);padding:10px 16px;display:flex;gap:7px;align-items:center}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.term .bar i:nth-child(2){background:#febc2e}.term .bar i:nth-child(3){background:#28c840}
+.term .bar em{margin-left:10px;color:var(--mut);font-style:normal;font-size:.75rem}
+.term pre{padding:20px;white-space:pre-wrap;font:inherit;color:#9fb3d9}
+.k{color:#c4a5ff}.s{color:var(--g)}.n{color:var(--a)}
+.about p{color:var(--mut);margin-bottom:16px}
+.about p b{color:var(--tx)}
+/* skills */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:20px;padding:30px;position:relative;overflow:hidden;transform-style:preserve-3d;transition:border-color .4s,box-shadow .4s}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(56,189,248,.14),transparent 45%);opacity:0;transition:.4s}
+.card:hover{border-color:rgba(56,189,248,.5);box-shadow:0 25px 50px -25px rgba(56,189,248,.35)}
+.card:hover:before{opacity:1}
+.ic{width:54px;height:54px;border-radius:14px;background:var(--grad);display:grid;place-items:center;font-size:1.4rem;margin-bottom:18px;transition:.5s}
+.card:hover .ic{transform:rotateY(360deg)}
+.card h3{font-size:1.1rem;margin-bottom:8px}
+.card p{color:var(--mut);font-size:.9rem}
+.bars{margin-top:50px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px 50px}
+.bar-i label{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:6px}
+.bar-i label span{color:var(--a);font-family:'JetBrains Mono',monospace}
+.trk{height:8px;background:var(--line);border-radius:8px;overflow:hidden}
+.trk div{height:100%;width:0;background:var(--grad);border-radius:8px;transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
+.mq{overflow:hidden;margin-top:50px;border-block:1px solid var(--line);padding:16px 0;mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq div{display:flex;gap:44px;width:max-content;animation:mq 28s linear infinite;font:600 .95rem 'JetBrains Mono',monospace;color:var(--mut)}
+.mq span i{color:var(--a);margin-right:8px}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* timeline */
+.tl{position:relative;max-width:860px;padding-left:34px}
+.tl:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--a),var(--b),transparent)}
+.ti{position:relative;margin-bottom:30px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 28px;transition:.4s}
+.ti:hover{transform:translateX(8px);border-color:var(--a)}
+.ti:before{content:"";position:absolute;left:-34px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--a);box-shadow:0 0 14px var(--a)}
+.ti small{font:400 .78rem 'JetBrains Mono',monospace;color:var(--a)}
+.ti h3{margin:4px 0 6px;font-size:1.05rem}
+.ti p,.ti li{color:var(--mut);font-size:.9rem}
+.ti ul{padding-left:18px}
+/* projects */
+.flt{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.flt button{background:var(--card);border:1px solid var(--line);color:var(--mut);padding:9px 20px;border-radius:50px;cursor:pointer;font:600 .85rem 'Sora',sans-serif;transition:.3s}
+.flt button:hover,.flt button.on{background:var(--grad);color:#fff;border-color:transparent}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:26px}
+.pj{display:flex;flex-direction:column;transition:opacity .4s,transform .5s,border-color .4s,box-shadow .4s}
+.pj.hd{display:none}
+.th{height:170px;border-radius:14px;margin:-8px -8px 20px;display:grid;place-items:center;font-size:3.2rem;color:rgba(255,255,255,.95);position:relative;overflow:hidden}
+.th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s}
+.pj:hover .th img{transform:scale(1.1)}
+.pj .tg{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 20px}
+.tg span{font:400 .7rem 'JetBrains Mono',monospace;padding:3px 10px;border-radius:50px;background:rgba(99,102,241,.15);color:#b4b9ff}
+.pj .lk{margin-top:auto;display:flex;gap:16px;flex-wrap:wrap}
+.lk a{color:var(--a);font-weight:600;font-size:.88rem;transition:.3s}
+.lk a:hover{letter-spacing:.04em;color:#fff}
+.g1{background:linear-gradient(135deg,#e50914,#6d0610)}.g2{background:linear-gradient(135deg,#0ea5e9,#4338ca)}.g3{background:linear-gradient(135deg,#6366f1,#a855f7)}.g4{background:linear-gradient(135deg,#10b981,#0e7490)}.g5{background:linear-gradient(135deg,#ef4444,#b91c1c)}.g6{background:linear-gradient(135deg,#0f172a,#1e40af)}
+.ar .th{height:160px}
+.nf{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:-8px -8px 20px}
+.nf a{position:relative;height:150px;border-radius:12px;overflow:hidden;display:grid;place-items:end center;background:linear-gradient(135deg,#e50914,#6d0610);transition:.35s}
+.nf a img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:.5s}
+.nf a span{position:relative;width:100%;text-align:center;padding:16px 4px 6px;font:600 .72rem 'Sora',sans-serif;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff}
+.nf a:hover{transform:translateY(-4px);box-shadow:0 12px 24px -10px #e50914}.nf a:hover img{transform:scale(1.08)}
+.btn.sm{padding:8px 14px;font-size:.78rem;gap:6px;color:#fff}.btn.sm:hover{color:#fff}
+@media(max-width:480px){.nf a{height:110px}}
+/* contact */
+.ct{display:grid;grid-template-columns:1fr 1.2fr;gap:40px}
+.ci{display:flex;gap:16px;align-items:center;padding:18px;margin-bottom:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;transition:.35s}
+.ci:hover{transform:translateX(8px);border-color:var(--a)}
+.ci i{width:46px;height:46px;border-radius:12px;background:var(--grad);display:grid;place-items:center}
+.ci small{color:var(--mut);display:block;font-size:.75rem}
+form{display:grid;gap:14px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;color:#fff;font:400 .92rem 'Sora',sans-serif;outline:0;transition:.3s}
+input:focus,textarea:focus{border-color:var(--a);box-shadow:0 0 0 4px rgba(56,189,248,.12)}
+textarea{min-height:140px;resize:vertical}
+footer{text-align:center;padding:36px 8%;border-top:1px solid var(--line);color:var(--mut);font-size:.88rem}
+footer span{color:var(--a)}
+#top{position:fixed;right:24px;bottom:24px;width:46px;height:46px;border-radius:50%;border:0;background:var(--grad);color:#fff;cursor:pointer;opacity:0;transform:translateY(20px);transition:.4s;z-index:900;font-size:1rem}
+#top.v{opacity:1;transform:none}
+#top:hover{transform:translateY(-5px)}
+:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+@media(max-width:900px){
+.hero,.about,.ct{grid-template-columns:1fr}
+.hero{text-align:center}.hero p.d{margin-inline:auto}.cta,.soc{justify-content:center}.hi{justify-content:center}
+.vis{order:-1;transform:scale(.8)}
+.ham{display:block}
+nav ul{position:absolute;top:100%;right:5%;flex-direction:column;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:14px;min-width:190px;opacity:0;pointer-events:none;transform:translateY(-12px);transition:.3s}
+nav ul.show{opacity:1;pointer-events:auto;transform:none}
+.bars{grid-template-columns:1fr}
+}
+@media(max-width:480px){section{padding:80px 6%}.ring{width:300px;height:300px}.photo{width:265px;height:265px}.chip{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="loader"><div class="ld">&gt; initializing_portfolio<i></i></div></div>
+<div id="progress"></div>
+<canvas id="bg"></canvas>
+<div class="glow" id="glow"></div>
+
+<header id="hd">
+  <a href="#home" class="logo">Sumair<span>.</span>dev</a>
+  <nav>
+    <button class="ham" id="ham" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    <ul id="nl">
+      <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Journey</a></li><li><a href="#projects">Projects</a></li><li><a href="#articles">Articles</a></li><li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <div class="hi">Available for freelance &amp; full-time work</div>
+    <h1>Hi, I'm <span class="grad">Sumair Hassan</span></h1>
+    <div class="role" id="role"></div>
+    <p class="d">I build secure, fast and scalable web applications, test them like an attacker would, and write about what I learn. MERN, Next.js, PHP, SQL and web penetration testing are my daily tools.</p>
+    <div class="cta">
+      <a href="SumairHassan.pdf" download="SumairHassan.pdf" class="btn p"><i class="fa-solid fa-download"></i> Download CV</a>
+      <a href="#projects" class="btn o"><i class="fa-solid fa-code"></i> View my work</a>
+    </div>
+    <div class="soc">
+      <a href="https://www.linkedin.com/in/sumair-hassan-developer" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://wa.me/923414806448" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="mailto:hassansumair199@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.upwork.com/freelancers/~01e3877c370b7382c2" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><i class="fa-brands fa-upwork"></i></a>
+    </div>
+  </div>
+  <div class="vis" id="vis">
+    <div class="ring"></div>
+    <img class="photo" id="photo" src="profile.png" alt="Sumair Hassan">
+    <div class="chip c1"><i class="fa-brands fa-react"></i>React</div>
+    <div class="chip c2"><i class="fa-solid fa-shield-halved"></i>Pen Testing</div>
+    <div class="chip c3"><i class="fa-brands fa-node-js"></i>Node.js</div>
+    <div class="chip c4"><i class="fa-solid fa-robot"></i>Prompt Eng.</div>
+  </div>
+</section>
+
+<div class="stats rv">
+  <div class="stat"><b class="grad" data-n="8" data-s="+">0</b><span>Live web projects</span></div>
+  <div class="stat"><b class="grad" data-n="3.46" data-d="2">0</b><span>CGPA out of 4.00</span></div>
+  <div class="stat"><b class="grad" data-n="3" data-s="+">0</b><span>Trainings Delivering</span></div>
+  <div class="stat"><b class="grad" data-n="5" data-s="+">0</b><span>Cyber Security Domains Expert</span></div>
+</div>
+
+<section id="about">
+  <div class="tag">// about</div>
+  <h2 class="st rv">Developer. Defender. Writer.</h2>
+  <div class="about">
+    <div class="rv l">
+      <p>I'm a <b>MERN Stack developer and cyber security specialist</b> studying BSCS (Web Development and Web Security) at the University of Sargodha. I turn ideas into fast, reliable and user-friendly websites and apps.</p>
+      <p>Beyond building, I <b>test web applications for vulnerabilities</b>, fix them and teach others how. At Tech Insight PVT in Sargodha I maintain the company website, supervise its SEO and train people in SEO, Python and cyber security.</p>
+      <p>I also run a tech blog and have written a book on Cyber Security and Ethical Hacking. I'm a certified Full Stack Developer and Ethical Hacker &amp; Penetration Tester from <b>Eduonix</b>.</p>
+      <a href="#contact" class="btn p">Let's work together</a>
+    </div>
+    <div class="term rv r">
+      <div class="bar"><i></i><i></i><i></i><em>sumair@portfolio: ~</em></div>
+<pre><span class="n">$</span> whoami
+sumair_hassan
+
+<span class="n">$</span> cat profile.json
+{
+  <span class="k">"role"</span>: <span class="s">"Full-Stack Dev + Security"</span>,
+  <span class="k">"stack"</span>: [<span class="s">"MERN"</span>, <span class="s">"Next.js"</span>, <span class="s">"PHP"</span>, <span class="s">"SQL"</span>],
+  <span class="k">"security"</span>: [<span class="s">"Web Pentest"</span>, <span class="s">"Kali"</span>],
+  <span class="k">"languages"</span>: [<span class="s">"Urdu"</span>, <span class="s">"English"</span>],
+  <span class="k">"location"</span>: <span class="s">"Sargodha, Pakistan"</span>,
+  <span class="k">"open_to_work"</span>: <span class="k">true</span>
+}</pre>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="tag">// expertise</div>
+  <h2 class="st rv">What I do best</h2>
+  <p class="sub rv">Four areas where I deliver production-ready results.</p>
+  <div class="sg">
+    <div class="card tl3 rv"><div class="ic"><i class="fa-solid fa-laptop-code"></i></div><h3>MERN &amp; Full-Stack Development</h3><p>Responsive, scalable apps with MongoDB, Express, React, Node.js, Next.js, PHP and SQL, including authentication and APIs.</p></div>
+    <div class="card tl3 rv"><div class="ic"><i class="fa-solid fa-user-shield"></i></div><h3>Cyber Security &amp; Ethical Hacking</h3><p>Web penetration testing, vulnerability assessment and security hardening to keep sites safe from real threats.</p></div>
+    <div class="card tl3 rv"><div class="ic"><i class="fa-solid fa-pen-nib"></i></div><h3>Tech Articles &amp; Blogging</h3><p>SEO-optimised, original articles that explain complex tech topics in plain language.</p></div>
+    <div class="card tl3 rv"><div class="ic"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>Prompt Engineering</h3><p>Writing precise prompts that speed up development, debugging and content creation with AI models.</p></div>
+  </div>
+  <div class="bars">
+    <div class="bar-i rv"><label>MERN / Next.js <span>90%</span></label><div class="trk"><div data-w="90"></div></div></div>
+    <div class="bar-i rv"><label>Web Security &amp; Pen Testing <span>88%</span></label><div class="trk"><div data-w="88"></div></div></div>
+    <div class="bar-i rv"><label>PHP, SQL &amp; MySQL <span>85%</span></label><div class="trk"><div data-w="85"></div></div></div>
+    <div class="bar-i rv"><label>Technical Writing &amp; SEO <span>90%</span></label><div class="trk"><div data-w="90"></div></div></div>
+    <div class="bar-i rv"><label>Prompt Engineering <span>92%</span></label><div class="trk"><div data-w="92"></div></div></div>
+    <div class="bar-i rv"><label>Python (OOP) &amp; C++ DSA <span>75%</span></label><div class="trk"><div data-w="75"></div></div></div>
+  </div>
+  <div class="mq"><div>
+    <span><i class="fa-brands fa-html5"></i>HTML5</span><span><i class="fa-brands fa-css3-alt"></i>CSS3</span><span><i class="fa-brands fa-js"></i>JavaScript</span><span><i class="fa-brands fa-react"></i>React</span><span><i class="fa-solid fa-n"></i>Next.js</span><span><i class="fa-brands fa-node-js"></i>Node.js</span><span><i class="fa-solid fa-database"></i>PostgreSQL</span><span><i class="fa-brands fa-php"></i>PHP</span><span><i class="fa-brands fa-python"></i>Python</span><span><i class="fa-brands fa-linux"></i>Kali Linux</span><span><i class="fa-solid fa-bug"></i>Burp Suite</span>
+    <span><i class="fa-brands fa-html5"></i>HTML5</span><span><i class="fa-brands fa-css3-alt"></i>CSS3</span><span><i class="fa-brands fa-js"></i>JavaScript</span><span><i class="fa-brands fa-react"></i>React</span><span><i class="fa-solid fa-n"></i>Next.js</span><span><i class="fa-brands fa-node-js"></i>Node.js</span><span><i class="fa-solid fa-database"></i>PostgreSQL</span><span><i class="fa-brands fa-php"></i>PHP</span><span><i class="fa-brands fa-python"></i>Python</span><span><i class="fa-brands fa-linux"></i>Kali Linux</span><span><i class="fa-solid fa-bug"></i>Burp Suite</span>
+  </div></div>
+</section>
+
+<section id="experience">
+  <div class="tag">// journey</div>
+  <h2 class="st rv">Experience &amp; education</h2>
+  <p class="sub rv">Where I work, what I study and what I've earned along the way.</p>
+  <div class="tl">
+    <div class="ti rv"><small>Present</small><h3>Web Developer, Tech Insight PVT (Sargodha)</h3>
+      <ul><li>Maintain the company website and supervise its SEO.</li><li>Deliver SEO, Python and Cyber Security trainings.</li><li>Solve complex problems across networking, web development, Linux and Windows.</li></ul></div>
+    <div class="ti rv"><small>Ongoing</small><h3>Blogger &amp; Technical Writer</h3><p>Write articles on cyber security, web development and AI tools on my own blog, and authored a book on Cyber Security and Ethical Hacking.</p></div>
+    <div class="ti rv"><small>2023 – 2027</small><h3>BSCS, University of Sargodha</h3><p>Specialization in Web Development and Web Security. CGPA 3.46 / 4.00.</p></div>
+    <div class="ti rv"><small>Certification</small><h3>Full Stack Developer and Ethical Hacker &amp; Penetration Tester</h3><p>Certified by Eduonix.</p></div>
+    <div class="ti rv"><small>2021 – 2022</small><h3>F.Sc Pre-Medical, Pak Pearl College Mianwali</h3><p>1014 / 1100 marks.</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="tag">// work</div>
+  <h2 class="st rv">Featured projects</h2>
+  <p class="sub rv">Real websites and hands-on cyber security projects.</p>
+  <div class="flt rv" id="flt">
+    <button class="on" data-f="all">All</button><button data-f="web">Web Development</button><button data-f="sec">Cyber Security</button>
+  </div>
+  <div class="pg" id="pg">
+    <div class="card pj rv" data-c="web"><div class="th g6"><i class="fa-solid fa-building"></i></div>
+      <h3>Tech Insight Official Website</h3><p>Full-stack company platform with Next.js, Node.js and PostgreSQL. Includes signup, login, password reset, contact form storage and a secure authorization layer.</p>
+      <div class="tg"><span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>Tailwind</span><span>Auth</span></div>
+      <div class="lk"><a href="https://techinsightpvt.com/" target="_blank" rel="noopener noreferrer">Live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+    <div class="card pj rv" data-c="web"><div class="th g2"><i class="fa-solid fa-user-tie"></i></div>
+      <h3>CEO Portfolio, Muhammad Usman</h3><p>Responsive personal brand website for the CEO &amp; Founder of Tech Insight, built from scratch with smooth navigation and interactive UI.</p>
+      <div class="tg"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+      <div class="lk"><a href="https://muhammad-usman-e-commerce-expert.vercel.app/" target="_blank" rel="noopener noreferrer">Live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+    <div class="card pj rv" data-c="web"><div class="nf"><a href="https://netflix-clone-by-sumair-hassan-jbbt4k60l.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Netflix Main Page"><img src="MERN Stack Projects/Netflix Clone/Netflix Main Page.png" alt="" loading="lazy" onerror="this.remove()"><span>Main Page</span></a><a href="https://netflix-clone-by-sumair-hassan-jbbt4k60l.vercel.app/faq.html" target="_blank" rel="noopener noreferrer" aria-label="Open Netflix FAQs Page"><img src="MERN Stack Projects/Netflix Clone/FAQs Page.png" alt="" loading="lazy" onerror="this.remove()"><span>FAQs Page</span></a><a href="https://netflix-clone-by-sumair-hassan-jbbt4k60l.vercel.app/media-center.html" target="_blank" rel="noopener noreferrer" aria-label="Open Netflix Media Center"><img src="MERN Stack Projects/Netflix Clone/Media Center Page.png" alt="" loading="lazy" onerror="this.remove()"><span>Media Center</span></a></div>
+      <h3>Netflix Pakistan Clone</h3><p>My first project: pixel-focused clones of the Main, FAQs and Media Center pages using pure HTML and CSS. Click any page to open it in a new tab.</p>
+      <div class="tg"><span>HTML</span><span>CSS</span><span>UI Cloning</span></div>
+      <div class="lk"><a class="btn p sm" href="https://netflix-clone-by-sumair-hassan-jbbt4k60l.vercel.app/" target="_blank" rel="noopener noreferrer">Main Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a class="btn p sm" href="https://netflix-clone-by-sumair-hassan-jbbt4k60l.vercel.app/faq.html" target="_blank" rel="noopener noreferrer">FAQs Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a class="btn p sm" href="https://netflix-clone-by-sumair-hassan-jbbt4k60l.vercel.app/media-center.html" target="_blank" rel="noopener noreferrer">Media Center <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+        <div class="card pj rv" data-c="sec"><div class="th g6"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+      <h3>OSINT Mega Project</h3><p>Open-source intelligence project on collecting and analysing publicly available information from many online sources.</p>
+      <div class="tg"><span>OSINT</span><span>Reconnaissance</span><span>Research</span></div>
+      <div class="lk"><a href="https://drive.google.com/file/d/1OpRemMFgQmA62UB8kwrFpwHMxM2Wn5ny/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View project PDF <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+    <div class="card pj rv" data-c="sec"><div class="th g2"><i class="fa-solid fa-sitemap"></i></div>
+      <h3>Website Information Gathering</h3><p>Information-gathering project covering how to learn about a website and its attack surface before a security assessment.</p>
+      <div class="tg"><span>Recon</span><span>Footprinting</span><span>Kali Linux</span></div>
+      <div class="lk"><a href="https://drive.google.com/file/d/1meRhTyPhrrvUsxK7ieHi1nMgDyTRtQmW/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View project PDF <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+    <div class="card pj rv" data-c="sec"><div class="th g5"><i class="fa-solid fa-bug"></i></div>
+      <h3>Website Vulnerability Analysis Project</h3><p>Vulnerability analysis of a website that documents security weaknesses found and how to fix them.</p>
+      <div class="tg"><span>Vulnerability Analysis</span><span>Web Security</span><span>Reporting</span></div>
+      <div class="lk"><a href="https://drive.google.com/file/d/1bU57_0JSBtlpRUuK55XUlCbqool64Dr3/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View project PDF <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+    <div class="card pj rv" data-c="sec"><div class="th g3"><i class="fa-solid fa-user-secret"></i></div>
+      <h3>Web Penetration Testing</h3><p>Web penetration testing project following a structured, authorised methodology from scoping to reporting.</p>
+      <div class="tg"><span>Pen Testing</span><span>OWASP</span><span>Burp Suite</span></div>
+      <div class="lk"><a href="https://drive.google.com/file/d/1GsNGDJr9kseeh44LtLOpGuGR2EoWCL5R/view?usp=sharing" target="_blank" rel="noopener noreferrer">View project PDF <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+  </div>
+</section>
+
+<section id="articles">
+  <div class="tag">// writing</div>
+  <h2 class="st rv">Latest &amp; top articles</h2>
+  <p class="sub rv">I write about cyber security, ethical hacking, web development, networking and AI. I focus on original, search-optimised, easy-to-read content.</p>
+  <div class="pg ar">
+    <div class="card pj rv"><div class="th g4"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXEXiBbdXhbN3Rn9NYj2BTlrKzsVJsCbIHqXjMQ46XwaKrBR4AqfyFOtkQxFPdf1OJLUcKhBtsG0llsCm90EwCYASkgkLGr-ru9cATND8DB2InOMudCbbiompl12_yj74D7iQnZLvlfhJo2Icwh67ZQVG5RMo1-eDE2FAHX-88hmoWhORgh7SDtI7H91o/w608-h337/How%20to%20Secure%20Digital%20Wallets%20From%20Cyber%20Attacks.png" alt="Tips to Secure Digital Payment Wallets" loading="lazy" onerror="this.remove()"><i class="fa-solid fa-wallet" style="position:relative"></i></div><h3>Tips to Secure Digital Payment Wallets</h3><p style="font-size:.8rem;margin-top:6px">Sep 15, 2026 · 30 preventive measures for financial accounts</p><div class="lk" style="margin-top:14px"><a href="https://cyvoryn.blogspot.com/2026/09/secure-financial-accounts-digital-payment-wallets.html" target="_blank" rel="noopener noreferrer">Read article →</a></div></div>
+    <div class="card pj rv"><div class="th g2"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKQlRezqjJFDCfOreprN4s_Nx4BoJwQUF1_cuQfuKZBTcZADbUJhI6XhIuQw1DyMMGxcLn1iTrKxQ7L4I9SNLwpPnvvmMgGHNxUp6_o5bAWUZtsO0bzW5vAJFT8guQBIMOoaoGHjFM1mUtXN_my1wGXwIv3NXwQq0RYLAzM_MdFVt_vhIKpD7x0xlh2Ik/w609-h333/Best%20Practices%20For%20Professional%20Web%20Development.png" alt="Web Development Best Practices" loading="lazy" onerror="this.remove()"><i class="fa-solid fa-code" style="position:relative"></i></div><h3>Web Development Best Practices</h3><p style="font-size:.8rem;margin-top:6px">Sep 19, 2026 · Secure, fast and SEO-friendly websites</p><div class="lk" style="margin-top:14px"><a href="https://cyvoryn.blogspot.com/2026/09/web-development-best-practices.html" target="_blank" rel="noopener noreferrer">Read article →</a></div></div>
+    <div class="card pj rv"><div class="th g6"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjN-N4DzaB4AAw1BKrR_mO1WWrWKKtWeYLccxeozHbSYsY06yBkB9nTdOCyja2w4oPJFK8oebK61UEhrs_0kYYg2EiBaJgMqM04ehN2B5rqPj6XeWx0p4JhrGmmP0qS_C-URKTzBRG0oi4uagnmP5vpbyZwgY0sBbFZcI3_pWNQ4T9Lvb49KHWHMkeQ1Z8/w622-h337/Web%20Penetration%20Testing.png" alt="Web Penetration Testing: Complete Guide" loading="lazy" onerror="this.remove()"><i class="fa-solid fa-user-secret" style="position:relative"></i></div><h3>Web Penetration Testing: Complete Guide</h3><p style="font-size:.8rem;margin-top:6px">Sep 19, 2026 · Methodology, tools and reporting</p><div class="lk" style="margin-top:14px"><a href="https://cyvoryn.blogspot.com/2026/09/web-penetration-testing-complete-guide.html" target="_blank" rel="noopener noreferrer">Read article →</a></div></div>
+    <div class="card pj rv"><div class="th g5"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEierAQWU0dc2p8RxQCA6wV6b_Ksp5InbXus6um_37sd2fE-KVZO5Q_iLp2dcsZ5iGpkyTszMvcu3Nd1jt4xYzJhjBFLVLB9PYIw9uwIOuIr76ED_npUVNsx-I-LZm5yEFlubGiyMCykvr87-3eGSiqdZY5wisoavqb-pJcyQwnZ29IldaNodiWZGiJzWMU/w591-h312/Fundamentals%20Of%20Cyber%20Security%20Everyone%20Must%20Know.png" alt="Fundamentals of Cyber Security" loading="lazy" onerror="this.remove()"><i class="fa-solid fa-shield-halved" style="position:relative"></i></div><h3>Fundamentals of Cyber Security</h3><p style="font-size:.8rem;margin-top:6px">Sep 12, 2026 · Core principles, roles and careers</p><div class="lk" style="margin-top:14px"><a href="https://cyvoryn.blogspot.com/2026/09/fundamentals-of-cyber-security.html" target="_blank" rel="noopener noreferrer">Read article →</a></div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="tag">// contact</div>
+  <h2 class="st rv">Let's build something secure</h2>
+  <p class="sub rv">Need a website, a security review or tech content? Send a message and I'll reply quickly.</p>
+  <div class="ct">
+    <div class="rv l">
+      <a class="ci" href="mailto:hassansumair199@gmail.com"><i class="fa-solid fa-envelope"></i><div><small>Email</small>hassansumair199@gmail.com</div></a>
+      <a class="ci" href="https://wa.me/923414806448" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i><div><small>WhatsApp</small>+92 341 4806448</div></a>
+      <a class="ci" href="https://www.linkedin.com/in/sumair-hassan-developer" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i><div><small>LinkedIn</small>sumair-hassan-developer</div></a>
+      <a class="ci" href="https://www.freelancer.com/u/sumairservices" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-briefcase"></i><div><small>Hire me on Freelancer / Upwork</small>sumairservices</div></a>
+    </div>
+    <form class="rv r" id="cf">
+      <input id="fn" placeholder="Your name" required>
+      <input id="fe" type="email" placeholder="Your email" required>
+      <textarea id="fm" placeholder="Tell me about your project" required></textarea>
+      <button class="btn p" type="submit"><i class="fa-solid fa-paper-plane"></i> Send message</button>
+    </form>
+  </div>
+</section>
+
+<footer>© 2026 <span>Sumair Hassan</span>. Empowering businesses and creators with secure web solutions and impactful digital growth.</footer>
+<button id="top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+addEventListener('load',()=>setTimeout(()=>$('#loader').classList.add('hide'),700));
+// typing roles
+const roles=['MERN Stack Developer','Cyber Security Expert','Next.js & PHP Engineer','Tech Content Writer','Prompt Engineer'];
+let ri=0,ci=0,del=false;const re=$('#role');
+(function t(){const w=roles[ri];re.textContent=w.slice(0,ci+=del?-1:1);
+let d=del?40:90;if(!del&&ci===w.length){del=true;d=1400}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=400}setTimeout(t,d)})();
+// scroll
+const hd=$('#hd'),pr=$('#progress'),tp=$('#top');
+addEventListener('scroll',()=>{const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+pr.style.width=(y/h*100)+'%';hd.classList.toggle('sc',y>40);tp.classList.toggle('v',y>600)},{passive:true});
+tp.onclick=()=>scrollTo({top:0});
+// menu
+$('#ham').onclick=()=>$('#nl').classList.toggle('show');
+$$('#nl a').forEach(a=>a.onclick=()=>$('#nl').classList.remove('show'));
+// reveal + counters + bars
+const cnt=el=>{const n=+el.dataset.n,d=+el.dataset.d||0,s=el.dataset.s||'',t0=performance.now();
+(function f(t){const p=Math.min((t-t0)/1600,1),e=1-Math.pow(1-p,3);el.textContent=(n*e).toFixed(d)+(p===1?s:'');if(p<1)requestAnimationFrame(f)})(t0)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;el.classList.add('in');
+el.querySelectorAll('[data-n]').forEach(cnt);el.querySelectorAll('[data-w]').forEach(b=>b.style.width=b.dataset.w+'%');io.unobserve(el)}),{threshold:.15});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)});
+// active nav
+const secs=[...$$('section[id]')],links=[...$$('#nl a')];
+addEventListener('scroll',()=>{let c='home';secs.forEach(s=>{if(scrollY>=s.offsetTop-200)c=s.id});links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+c))},{passive:true});
+// card spotlight + 3D tilt
+$$('.card').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+c.style.transform=`perspective(900px) rotateX(${(y/r.height-.5)*-7}deg) rotateY(${(x/r.width-.5)*7}deg) translateY(-6px)`});
+c.addEventListener('mouseleave',()=>c.style.transform='')});
+// hero photo parallax
+const vis=$('#vis'),ph=$('#photo');
+vis.addEventListener('mousemove',e=>{const r=vis.getBoundingClientRect();ph.style.transform=`rotateY(${((e.clientX-r.left)/r.width-.5)*18}deg) rotateX(${((e.clientY-r.top)/r.height-.5)*-18}deg)`});
+vis.addEventListener('mouseleave',()=>ph.style.transform='');
+ph.onerror=()=>{ph.src="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0f1930"/><text x="50" y="62" font-size="38" text-anchor="middle" fill="#38bdf8" font-family="sans-serif" font-weight="800">SH</text></svg>')};
+// cursor glow
+const gl=$('#glow');addEventListener('mousemove',e=>{gl.style.left=e.clientX+'px';gl.style.top=e.clientY+'px'});
+// project filter
+$$('#flt button').forEach(b=>b.onclick=()=>{$$('#flt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+$$('#pg .pj').forEach(p=>p.classList.toggle('hd',b.dataset.f!=='all'&&p.dataset.c!==b.dataset.f))});
+// contact -> opens mail client
+$('#cf').onsubmit=e=>{e.preventDefault();location.href=`mailto:hassansumair199@gmail.com?subject=${encodeURIComponent('Portfolio inquiry from '+$('#fn').value)}&body=${encodeURIComponent($('#fm').value+'\n\nFrom: '+$('#fe').value)}`};
+// click anywhere on a project/article card -> open its link in a new tab
+document.querySelectorAll('.pj').forEach(c=>{const l=c.querySelectorAll('.lk a');if(l.length!==1)return;c.style.cursor='pointer';
+c.addEventListener('click',e=>{if(e.target.closest('a'))return;window.open(l[0].href,'_blank','noopener,noreferrer')})});
+// network canvas
+(function(){const cv=$('#bg'),x=cv.getContext('2d');let W,H,P=[],m={x:-999,y:-999};
+const rs=()=>{W=cv.width=innerWidth;H=cv.height=innerHeight;P=Array.from({length:Math.min(80,W/16|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))};
+rs();addEventListener('resize',rs);addEventListener('mousemove',e=>{m.x=e.clientX;m.y=e.clientY});
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+(function f(){x.clearRect(0,0,W,H);P.forEach((p,i)=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+x.fillStyle='rgba(56,189,248,.6)';x.beginPath();x.arc(p.x,p.y,1.6,0,7);x.fill();
+for(let j=i+1;j<P.length;j++){const q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){x.strokeStyle=`rgba(99,102,241,${.28*(1-d/130)})`;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}
+const dm=Math.hypot(p.x-m.x,p.y-m.y);if(dm<170){x.strokeStyle=`rgba(56,189,248,${.5*(1-dm/170)})`;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(m.x,m.y);x.stroke()}});requestAnimationFrame(f)})()})();
+</script>
+</body>
+</html>
